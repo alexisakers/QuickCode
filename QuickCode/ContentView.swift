@@ -5,49 +5,24 @@
 //  Created by Alexis Akers on 3/11/21.
 //
 
-import SwiftUI
 import AVFoundation
 import RSBarcodes_Swift
-
-enum BarcodeType: String, CaseIterable, Identifiable {
-    case code128
-    case ean8
-    case ean13
-    case upc
-
-    var id: BarcodeType { self }
-
-    var rawCodeType: AVMetadataObject.ObjectType {
-        switch self {
-        case .code128:
-            return .code128
-        case .upc:
-            return .upce
-        case .ean8:
-            return .ean8
-        case .ean13:
-            return .ean13
-        }
-    }
-}
+import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedBarcodeType = BarcodeType.ean8
+    @State private var selectedBarcodeType: BarcodeType = .code128
     @State private var input: String = ""
     @State private var image: Image?
 
     var isInputValid: Bool {
-        guard !input.isEmpty else {
-            return false
+        guard selectedBarcodeType.needsValidation else {
+            return true
         }
 
-        for scalar in input.unicodeScalars {
-            if !CharacterSet.decimalDigits.contains(scalar) {
-                return false
-            }
-        }
-
-        return true
+        return RSUnifiedCodeValidator.shared.isValid(
+            input,
+            machineReadableCodeObjectType: selectedBarcodeType.rawCodeType
+        )
     }
 
     var body: some View {
@@ -79,16 +54,17 @@ struct ContentView: View {
         .padding(16)
     }
 
+    // MARK: - Helpers
+
     private func generateImage() {
         let imageSize = CGSize(width: 200, height: 100)
-        let baseImage = RSUnifiedCodeGenerator.shared.generateCode(input, inputCorrectionLevel: .Medium, machineReadableCodeObjectType: selectedBarcodeType.rawCodeType.rawValue, ignoreValidation: true, targetSize: imageSize)
+        let baseImage = RSUnifiedCodeGenerator.shared.generateCode(
+            input,
+            inputCorrectionLevel: .Medium,
+            machineReadableCodeObjectType: selectedBarcodeType.rawCodeType,
+            targetSize: imageSize
+        )
+
         self.image = baseImage.map(Image.init(nsImage:))
-    }
-}
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

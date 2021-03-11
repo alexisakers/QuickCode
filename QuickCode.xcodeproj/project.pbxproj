@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6728AB25FAC7BA008FE01B /* BarcodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6728AA25FAC7BA008FE01B /* BarcodeType.swift */; };
 		1F67EB8525FA5424008FE01B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67EB8425FA5424008FE01B /* AppDelegate.swift */; };
 		1F67EB8725FA5424008FE01B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F67EB8625FA5424008FE01B /* ContentView.swift */; };
 		1F67EB8925FA5427008FE01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F67EB8825FA5427008FE01B /* Assets.xcassets */; };
-		1F67EB8C25FA5427008FE01B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F67EB8B25FA5427008FE01B /* Preview Assets.xcassets */; };
 		1F67EB8F25FA5427008FE01B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F67EB8D25FA5427008FE01B /* Main.storyboard */; };
 		1F67EB9E25FA62B9008FE01B /* RSBarcodes_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F67EB9D25FA62B9008FE01B /* RSBarcodes_Swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F6728AA25FAC7BA008FE01B /* BarcodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeType.swift; sourceTree = "<group>"; };
 		1F67EB8125FA5424008FE01B /* QuickCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F67EB8425FA5424008FE01B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F67EB8625FA5424008FE01B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1F67EB8825FA5427008FE01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F67EB8B25FA5427008FE01B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F67EB8E25FA5427008FE01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F67EB9025FA5427008FE01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F67EB9125FA5427008FE01B /* QuickCode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickCode.entitlements; sourceTree = "<group>"; };
@@ -59,21 +59,13 @@
 			children = (
 				1F67EB8425FA5424008FE01B /* AppDelegate.swift */,
 				1F67EB8625FA5424008FE01B /* ContentView.swift */,
+				1F6728AA25FAC7BA008FE01B /* BarcodeType.swift */,
 				1F67EB8825FA5427008FE01B /* Assets.xcassets */,
 				1F67EB8D25FA5427008FE01B /* Main.storyboard */,
 				1F67EB9025FA5427008FE01B /* Info.plist */,
 				1F67EB9125FA5427008FE01B /* QuickCode.entitlements */,
-				1F67EB8A25FA5427008FE01B /* Preview Content */,
 			);
 			path = QuickCode;
-			sourceTree = "<group>";
-		};
-		1F67EB8A25FA5427008FE01B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				1F67EB8B25FA5427008FE01B /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F67EB8F25FA5427008FE01B /* Main.storyboard in Resources */,
-				1F67EB8C25FA5427008FE01B /* Preview Assets.xcassets in Resources */,
 				1F67EB8925FA5427008FE01B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +145,7 @@
 			files = (
 				1F67EB8725FA5424008FE01B /* ContentView.swift in Sources */,
 				1F67EB8525FA5424008FE01B /* AppDelegate.swift in Sources */,
+				1F6728AB25FAC7BA008FE01B /* BarcodeType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +286,6 @@
 				CODE_SIGN_ENTITLEMENTS = QuickCode/QuickCode.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"QuickCode/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QuickCode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,7 +307,6 @@
 				CODE_SIGN_ENTITLEMENTS = QuickCode/QuickCode.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"QuickCode/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QuickCode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

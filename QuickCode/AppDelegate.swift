@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the status item
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.squareLength))
-
+        statusBarItem.behavior = [.removalAllowed, .terminationOnRemoval]
 
         if let button = self.statusBarItem.button {
             let itemImage = NSImage(named: "StatusBarIcon")
@@ -53,4 +53,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 }
-
