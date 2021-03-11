@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RSBarcodes_Swift",
+        "repositoryURL": "https://github.com/alexisakers/RSBarcodes_Swift",
+        "state": {
+          "branch": "aakers/macos-support",
+          "revision": "9b6966f2a2ba5189d0208a6383b90d0abff7008e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
