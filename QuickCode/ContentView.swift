@@ -43,10 +43,18 @@ struct ContentView: View {
                 }
             )
 
-            TextField("Code", text: $input)
+            if #available(macOS 11, *) {
+                TextField("Code", text: $input)
 
-            Button("Generate", action: generateImage)
-                .disabled(!isInputValid)
+                Button("Generate", action: generateImage)
+                    .disabled(!isInputValid)
+                    .keyboardShortcut(.defaultAction)
+            } else {
+                TextField("Code", text: $input, onCommit: generateImage)
+
+                Button("Generate", action: generateImage)
+                    .disabled(!isInputValid)
+            }
 
             image?
                 .padding(.top, 16)
