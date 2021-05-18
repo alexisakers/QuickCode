@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the status item
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.squareLength))
         statusBarItem.behavior = [.removalAllowed, .terminationOnRemoval]
+        statusBarItem.isVisible = true
 
         if let button = self.statusBarItem.button {
             let itemImage = NSImage(named: "StatusBarIcon")
